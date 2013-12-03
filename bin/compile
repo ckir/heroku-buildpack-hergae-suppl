@@ -7,12 +7,14 @@ mkdir zeromq
 cd zeromq
 tar xzf ../zeromq-4.0.3-bin.tar.gz
 cd /tmp
+mkdir -p ~/vendor
 mv zeromq ~/vendor
 
 curl -O http://s3.amazonaws.com/HerokuBinaries/zeromq/zmq-1.1.2-bin.tar.gz
 tar xzf zmq-1.1.2-bin.tar.gz
 mkdir -p /app/vendor/php/lib/php/extensions/no-debug-non-zts-20121212
 mv zmq.so /app/vendor/php/lib/php/extensions/no-debug-non-zts-20121212/
+mkdir -p ~/vendor/php/etc/conf.d
 echo "extension=zmq.so" > ~/vendor/php/etc/conf.d/zmq.ini
 
 
