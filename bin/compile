@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir>
+
+cd /tmp
+curl -O http://s3.amazonaws.com/HerokuBinaries/zeromq/zeromq-4.0.3-bin.tar.gz
+mkdir zeromq
+cd zeromq
+tar xzf ../zeromq-4.0.3-bin.tar.gz
+cd /tmp
+mv zeromq ~/vendor
+
+curl -O http://s3.amazonaws.com/HerokuBinaries/zeromq/zmq-1.1.2-bin.tar.gz
+tar xzf zmq-1.1.2-bin.tar.gz
+mv zmq.so ~/vendor/php/lib/php/extensions/no-debug-non-zts-20121212
+echo "extension=zmq.so" > ~/vendor/php/etc/conf.d/zmq.ini
+
+

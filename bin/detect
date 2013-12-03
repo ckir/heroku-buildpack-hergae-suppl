@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# bin/detect <build-dir>
+
+#if [[ true || -f $1/vendor/php/etc/conf.d/zmq.ini ]]; then
+  echo "zmq" && exit 0
+#else
+# echo "no" && exit 1
+#fi
+

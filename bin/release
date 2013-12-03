@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# bin/release <build-dir>
+
+BUILD_DIR=$1
+
+cat <<EOF
+---
+config_vars:
+LD_LIBRARY_PATH: $LD_LIBRARY_PATH:/app/vendor/zeromq/lib
+EOF
